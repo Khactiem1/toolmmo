@@ -1,0 +1,132 @@
+$combo-height: 30px;
+.d-inline-block {
+  display: inline-block;
+}
+.dropdown-items {
+  padding: 0;
+  margin: 0;
+  visibility: visible;
+}
+.scroller-overlay{
+  overflow: auto;
+  transition: visibility;
+}
+
+.combo-dropdown-panel {
+  font-family: "notosans-regular";
+  border: 1px solid #D5DFE2;
+  // tăng z-index để hiển thị thoải mái trên màn hình báo cáo thay vì z-index: 11100
+  z-index: 100000; // tăng z-index tránh trường hợp bị ẩn popup full màn hình
+  position: absolute;
+  // margin-top: 2px;
+  background-color: #fff;
+  //border: 1px solid #ddd;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 6%);
+  border-radius: 2px;
+  &.grid-editor {
+    :deep(.vue-recycle-scroller__item-view) {
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    :deep(.dropdown-header) {
+      height: 48px;
+      th {
+        padding: 0px !important;
+        z-index: 1;
+        span {
+          width: 100px;
+          text-align: left;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+  .dropdown-table {
+    visibility: visible;
+    border-collapse: collapse;
+    width: 100%;
+    tr {
+      border-bottom: 1px solid #ddd;
+      &:last-child {
+        border-bottom: none !important;
+      }
+    }
+  }
+  .dropdown-header {
+    th {
+      padding: 0 10px;
+      height: $combo-height;
+      z-index: 1;
+      background-color: #eaebef;
+      position: sticky;
+      top: 0;
+      text-align: left;
+      font-weight: 600;
+      font-size: 12px;
+    }
+    .dropdown-header__th:first-child{
+      padding-left: 16px !important;
+    }
+  }
+  .dropdown-body-container {
+    max-height: 198px;
+  }
+  .dropdown--loading {
+    height: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .loading {
+      width: 32px;
+      height: 38px;
+      left: calc(50% - 27px);
+      top: 20px;
+      background: none;
+    }
+  }
+  .no-data-display {
+    .no-data-display__text {
+      height: 38px;
+      line-height: 36px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 13px;
+    }
+  }
+  .com-bottom-button {
+    display: table-cell;
+    padding: 0 12px 0 34px;
+    position: relative;
+    cursor: pointer;
+    .mi {
+      position: absolute;
+      left: 10px;
+      top: 2px;
+    }
+    .text {
+      display: inline-block;
+      color: #35bf22;
+    }
+    &:not(:last-child):after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      height: 18px;
+      width: 1px;
+      background: #b9bec5;
+      right: 0;
+      top: 2px;
+    }
+  }
+  .btn-add-menu {
+    padding: 6px 2px;
+    background: #ebedf0;
+    margin: 0 1px 1px;
+  }
+  .wrap-footer-combobox-dropdown {
+    display: flex;
+    border-top: 1px solid #D5DFE2;
+  }
+}

@@ -1,0 +1,47 @@
+:deep(.ms-input){
+  .flex-row{
+    position: relative;
+  }
+}
+.icon-wrapper {
+  left: 8px;
+  top: 5px;
+  z-index: 1;
+  position: absolute;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
+}
+.table-list_action, .list_action-item{
+  z-index: 10;
+}
+.badge-container{
+  gap: 8px;
+  .badge{
+    border: solid 1px rgb(213, 223, 226);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    height: 32px;
+    padding: 6px 12px;
+    cursor: pointer;
+    width: 100px;
+    &.active{
+      background-color: #f5ecda;
+      border-color: #f5ecda;
+      font-weight: 700;
+    }
+  }
+}
+.ref-link{
+  display: inline-block;
+  color: var(--primary__color);
+  cursor: pointer;
+}
+.widget-more-container{
+  .fa-caret-down{
+    color: var(--primary__color);
+  }
+}

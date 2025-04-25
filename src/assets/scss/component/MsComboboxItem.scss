@@ -1,0 +1,121 @@
+
+$combo-height: 30px;
+$font-weight-bold: 700;
+$font-weight-semi-bold: 700;
+$combobox-hover-color: var(--primary__color);
+$combobox-hover-bg: #f6f6f6;
+.combobox-item {
+  font-family: "notosans-regular";
+  cursor: pointer;
+  height: $combo-height;
+  line-height: $combo-height;
+  white-space: nowrap;
+  border-radius: 2px;
+  padding-left: 12px;
+  .combobox-item-con {
+    display: flex;
+    width: calc(100% - 25px);
+    .selected-container {
+      margin: auto;
+    }
+  }
+  &:last-child {
+    margin-bottom: 2px;
+  }
+  &:hover {
+    background: $combobox-hover-bg;
+    color: $combobox-hover-color;
+  }
+
+  &.parent {
+    font-weight: $font-weight-semi-bold;
+  }
+
+  &.single {
+    display: flex;
+    align-items: center;
+  }
+
+  &.combobox-item--highlight {
+    color: var(--primary__color);
+    background-color: $combobox-hover-bg;
+  }
+
+  .combobox-item--text {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-items: center;
+    font-size: 13px;
+  }
+
+  .trash-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+
+  .combobox-item-td {
+    padding: 0 10px;
+    &:first-child {
+    padding-left: 16px;
+    }
+    .combobox-item-td--text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 13px;
+    }
+  }
+  .combobox-item-td:last-child {
+    border-right: 1px solid transparent;
+  }
+}
+
+.selected-container {
+  width: 36px;
+  height: 20px;
+
+  .selected {
+    padding-right: 10px;
+    background-position: -896px -312px;
+    width: 16px;
+    height: 16px;
+  }
+  .mi-checkbox-active {
+    margin: auto;
+  }
+}
+.combobox-item{
+  position: relative;
+// padding-right: 32px;
+}
+.combobox-item.selected{
+  color: $combobox-hover-color;
+  font-weight: $font-weight-semi-bold;
+}
+
+// @for $i from 1 through 10 {
+//   $x: ($i - 1) * 15 + 12;
+//   $y: ($i - 1) * 30 + 12;
+//   .level-#{$i} {
+//     padding-left: #{$x}px !important;
+//   }
+// }
+
+//Style custom của từng item
+.font-style-Bold {
+  font-weight: $font-weight-bold;
+}
+.font-style-Italic {
+  font-style: italic;
+}
+.font-style-BoldItalic {
+  font-weight: $font-weight-bold;
+  font-style: italic;
+}

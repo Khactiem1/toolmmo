@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: green24h-cms
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: green24h-cms
+  template:
+    metadata:
+      labels:
+        app: green24h-cms
+    spec:
+      containers:
+      - name: green24h-cms
+        image: "V_DOCKER_IMAGE"
+        imagePullPolicy: IfNotPresent #Always
+        ports:
+        - containerPort: 80
+          name: http
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: V_ENVIRONMENT
+
+      imagePullSecrets:
+      - name: V_SECRET
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: green24h-cms
+  namespace: green24h
+spec:
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 30050 # comment if not nodeport
+    name: http
+  selector:
+    app: green24h-cms
+  type: NodePort # comment if not nodeport
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack

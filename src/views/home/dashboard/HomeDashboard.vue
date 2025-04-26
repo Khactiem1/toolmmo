@@ -41,6 +41,7 @@
     </div>
     <ms-grid-viewer
       :ref="viewRef"
+      :idField="'email_id'"
       :columns="column"
       :data="storeModule.items"
       :pageTotal="storeModule.total"
@@ -59,6 +60,11 @@
             level="H"
           />
         </div>
+      </template>
+      <template #description="{ record }">
+        <ms-input
+          v-model="record.description"
+        ></ms-input>
       </template>
       <template #widget-body="{ record }">
         <div class="widget-container">
@@ -151,11 +157,12 @@ export default defineComponent({
       {
         lock: false,
         width: 200,
-        header: "client_id",
-        dataField: "client_id",
+        header: "description",
+        dataField: "description",
         formatType: 12,
-        headerCustom: "client_id",
+        headerCustom: "description",
         visible: true,
+        type: 'custom',
       },
     ];
 
@@ -179,6 +186,7 @@ export default defineComponent({
             const client_id = parts[len - 1];
 
             accounts.push({
+              email_id: me.$ms.commonFn.generateUUID(),
               email,
               pass,
               refresh_token,
@@ -216,4 +224,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @use "@/assets/scss/listStyle" as style;
+:deep(.table tbody td){
+  min-height: 100px;
+  height: 100px;
+}
 </style>

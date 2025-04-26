@@ -39,11 +39,6 @@
                             </ms-input>
                         </div>
                         <div class="form-group">
-                            <ms-froala
-                                :label="$t('i18nFunctionConfig.Detail.value03')"
-                                v-model="model.value03"
-                                :pathMedia="`/function_config/value03/${model.function_config_id}`"
-                            />
                         </div>
                     </div>
                 </div>
@@ -75,12 +70,10 @@ import functionConfigAPI from "@/apis/sys/functionConfigAPI";
 import dictionaryAPI from "@/apis/sys/dictionaryAPI";
 import BaseDetail from "@/views/base/BaseDetail";
 import { useRemoteCombobox } from '@/setup/remoteCombobox';
-import MsFroala from '@/components/froala/MsFroala.vue';
 
 export default defineComponent({
     mixins: [],
     components: {
-        MsFroala,
     },
     extends: BaseDetail,
     setup() {

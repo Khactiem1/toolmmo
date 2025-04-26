@@ -51,37 +51,37 @@ const router = createRouter({
   linkActiveClass: "active",
 })
 
-router.beforeEach(async (to: any, from: any, next: any) => {
-  document.title = i18n.global.t(to.meta.title ? to.meta.title : 'i18nCommon.TitleDefault') // Đặt tiêu đề trang theo ngôn ngữ hiện tại
-  let user = commonFn.getUser();
-  // await authService.getAllPermission();
-  // // Thực hiện check quyền người dùng
-  // if(to.path != '/not-permission' && to.meta.sub_system_code){
-  //   if(!(await authService.checkActionPermisson('View', to.meta.sub_system_code))){
-  //     next({ name: "notPermission" });
-  //   }
-  // }
+// router.beforeEach(async (to: any, from: any, next: any) => {
+//   document.title = i18n.global.t(to.meta.title ? to.meta.title : 'i18nCommon.TitleDefault') // Đặt tiêu đề trang theo ngôn ngữ hiện tại
+//   let user = commonFn.getUser();
+//   // await authService.getAllPermission();
+//   // // Thực hiện check quyền người dùng
+//   // if(to.path != '/not-permission' && to.meta.sub_system_code){
+//   //   if(!(await authService.checkActionPermisson('View', to.meta.sub_system_code))){
+//   //     next({ name: "notPermission" });
+//   //   }
+//   // }
 
-  // Thực hiện chuyển đến trang mong muốn
-  user = {};
-  user.access_token = '123';
-  if(to.name !== 'login'){
-    if(user?.access_token){
-      if (to.path == '/'){
-        next({ name: "dashboard" });
-      }
-      next();
-    }
-    else{
-      next({ name: "login" });
-    }
-  }
-  else{
-    if(user?.access_token){
-      next({ name: "dashboard" });
-    }
-    next();
-  }
-})
+//   // Thực hiện chuyển đến trang mong muốn
+//   user = {};
+//   user.access_token = '123';
+//   if(to.name !== 'login'){
+//     if(user?.access_token){
+//       if (to.path == '/'){
+//         next({ name: "dashboard" });
+//       }
+//       next();
+//     }
+//     else{
+//       next({ name: "login" });
+//     }
+//   }
+//   else{
+//     if(user?.access_token){
+//       next({ name: "dashboard" });
+//     }
+//     next();
+//   }
+// })
 
 export default router;

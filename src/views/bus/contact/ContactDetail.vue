@@ -36,11 +36,6 @@
                         </div>
                     </div>
                     <div class="form-detail form-group">
-                        <ms-froala 
-                            :label="$t('i18nContact.Detail.content')"
-                            v-model="model.content"
-                            :pathMedia="`/contact/content/${model.contact_id}`"
-                        />
                     </div>
                 </div>
             </div>
@@ -70,14 +65,12 @@ import useModuleContact from "@/stores/bus/moduleContact";
 import contactAPI from "@/apis/bus/contactAPI";
 import dictionaryAPI from "@/apis/sys/dictionaryAPI";
 import BaseDetail from "@/views/base/BaseDetail";
-import MsFroala from '@/components/froala/MsFroala.vue';
 import { useRemoteCombobox } from '@/setup/remoteCombobox';
 
 
 export default defineComponent({
     mixins: [],
     components: {
-        MsFroala,
     },
     extends: BaseDetail,
     setup() {

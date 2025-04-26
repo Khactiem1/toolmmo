@@ -56,7 +56,7 @@
           <qrcode-vue
             v-if="record.show"
             :value="record.email"
-            :size="100"
+            :size="160"
             level="H"
           />
         </div>
@@ -225,7 +225,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 @use "@/assets/scss/listStyle" as style;
 :deep(.table tbody td){
-  min-height: 100px;
-  height: 100px;
+  min-height: 160px;
+  height: 160px;
 }
 </style>

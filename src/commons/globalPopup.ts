@@ -68,7 +68,6 @@ const MsConfigLayoutList = defineAsyncComponent(() => import('@/components/layou
 const ChangePassword = defineAsyncComponent(() => import('@/components/layout/ChangePassword.vue'));
 const TheSettingClamp = defineAsyncComponent(() => import('@/components/system/TheSettingClamp.vue'));
 const UserProfile = defineAsyncComponent(() => import('@/components/layout/UserProfile.vue'));
-const FileManagement = defineAsyncComponent(() => import('@/components/froala/FileManagement.vue'));
 
 export const register = (app: App<Element>) => {
   app.component('UserDetail', UserDetail);
@@ -93,7 +92,6 @@ export const register = (app: App<Element>) => {
   app.component('TheSettingClamp', TheSettingClamp);
   app.component('BankDetail', BankDetail);
   app.component('UserProfile', UserProfile);
-  app.component('FileManagement', FileManagement);
   app.component('FooterDetail', FooterDetail);
   app.component('AnoucementDetail', AnoucementDetail);
   app.component('DepartmentDetail', DepartmentDetail);

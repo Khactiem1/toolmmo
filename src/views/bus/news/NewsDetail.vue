@@ -101,11 +101,6 @@
             </div>
           </div>
           <div class="form-detail form-group">
-            <ms-froala
-              :label="$t('i18nNews.Detail.content')"
-              v-model="model.content"
-              :pathMedia="`/news/content/${model.news_id}`"
-            />
           </div>
         </div>
       </div>
@@ -155,7 +150,6 @@ import newsAPI from "@/apis/bus/newsAPI";
 import newsListAPI from "@/apis/bus/newsListAPI";
 import BaseDetail from "@/views/base/BaseDetail";
 import MsFileImage from "@/components/file/MsFileImage.vue";
-import MsFroala from '@/components/froala/MsFroala.vue';
 import { useRemoteCombobox } from '@/setup/remoteCombobox';
 import dictionaryAPI from "@/apis/sys/dictionaryAPI";
 import { useNewsConfig } from "@/views/bus/news/newsConfig"
@@ -165,7 +159,6 @@ export default defineComponent({
   mixins: [],
   components: {
     MsFileImage,
-    MsFroala,
   },
   extends: BaseDetail,
   setup() {

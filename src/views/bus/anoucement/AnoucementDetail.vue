@@ -73,11 +73,7 @@
                         </div> 
 
                         <div class="form-detail form-group">
-                            <ms-froala
-                                :label="$t('i18nAnoucement.Detail.content')"
-                                v-model="model.content" 
-                                :pathMedia="`/anoucement/content/${model.anoucement_id}`"
-                            /> 
+                            
                         </div>
 
                     </div>
@@ -112,13 +108,11 @@ import MsFileImage from "@/components/file/MsFileImage.vue";
 import { useRemoteCombobox } from '@/setup/remoteCombobox';
 import dictionaryAPI from "@/apis/sys/dictionaryAPI";
 import dictionaryListAPI from "@/apis/sys/dictionaryListAPI";     
-import MsFroala from '@/components/froala/MsFroala.vue'; 
 
 export default defineComponent({
     mixins: [],
     components: {
         MsFileImage,
-        MsFroala
     },
     extends: BaseDetail,
     setup() {

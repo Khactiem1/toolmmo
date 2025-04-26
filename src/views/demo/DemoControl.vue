@@ -154,7 +154,6 @@
 <script lang="ts">
 import { defineComponent, getCurrentInstance, ref, reactive } from 'vue';
 import popupUtil from '@/commons/popupUtil';
-import MsFroala from '@/components/froala/MsFroala.vue';
 import { showInfo, showAlert, showConfirm, showError, showWarning } from '@/commons/globalMessage';
 import dictionaryListAPI from '@/apis/sys/dictionaryListAPI';
 import { useRemoteCombobox } from '@/setup/remoteCombobox';
@@ -164,7 +163,6 @@ import MsFileUpload from '@/components/input/MsFileUpload.vue';
 
 export default defineComponent({
   components: {
-		MsFroala,
 		MsComboboxTreeV2,
 		MsFileUpload,
   },

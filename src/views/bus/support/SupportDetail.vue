@@ -28,11 +28,7 @@
                         </div>
                     </div>
                     <div class="form-detail form-group">
-                        <ms-froala 
-                            :label="$t('i18nSupport.Detail.content')"
-                            v-model="model.content"
-                            :pathMedia="`/support/content/${model.support_id}`"
-                        />
+                        
                     </div>
                 </div>
             </div>
@@ -61,7 +57,6 @@ import { defineComponent, getCurrentInstance, reactive, ref } from "vue";
 import useModuleSupport from "@/stores/bus/moduleSupport";
 import supportAPI from "@/apis/bus/supportAPI";
 import BaseDetail from "@/views/base/BaseDetail";
-import MsFroala from '@/components/froala/MsFroala.vue';
 import MsComboboxTreeV2 from '@/components/comboboxTree/MsComboboxTreeV2.vue';
 import supportListAPI from "@/apis/bus/supportListAPI";
 
@@ -69,7 +64,6 @@ export default defineComponent({
     mixins: [],
     components: {
         MsComboboxTreeV2,
-        MsFroala,
     },
     extends: BaseDetail,
     setup() {

@@ -13,9 +13,9 @@ const main: any [] = [
     component: () => import('@/page/MainPage.vue'),
     children: [
       ...routerHome,
-      ...routerBusiness,
-      ...routerSystem,
-      ...routerCustomer,
+      // ...routerBusiness,
+      // ...routerSystem,
+      // ...routerCustomer,
       {
         path: '/not-found',
         name: 'notFound',

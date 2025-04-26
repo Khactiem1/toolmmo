@@ -19,7 +19,7 @@ const main: any [] = [
       {
         path: '/not-found',
         name: 'notFound',
-        component: () => import('@/page/NotFound.vue'),
+        component: () => import('@/views/home/dashboard/HomeDashboard.vue'),
       },
       {
         path: '/not-permission',
